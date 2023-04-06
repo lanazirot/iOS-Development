@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C98DC9329DE8D26000936E5 /* Vehiculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98DC9229DE8D26000936E5 /* Vehiculo.swift */; };
+		5C98DC9529DE8D78000936E5 /* Autobus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98DC9429DE8D78000936E5 /* Autobus.swift */; };
+		5C98DC9729DE8D93000936E5 /* Limosina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98DC9629DE8D93000936E5 /* Limosina.swift */; };
 		5CFF307529DE8AF200C76787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF307429DE8AF200C76787 /* AppDelegate.swift */; };
 		5CFF307729DE8AF200C76787 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF307629DE8AF200C76787 /* SceneDelegate.swift */; };
 		5CFF307929DE8AF200C76787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF307829DE8AF200C76787 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C98DC9229DE8D26000936E5 /* Vehiculo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehiculo.swift; sourceTree = "<group>"; };
+		5C98DC9429DE8D78000936E5 /* Autobus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autobus.swift; sourceTree = "<group>"; };
+		5C98DC9629DE8D93000936E5 /* Limosina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limosina.swift; sourceTree = "<group>"; };
 		5CFF307129DE8AF200C76787 /* Examen Unidad 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Examen Unidad 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFF307429DE8AF200C76787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFF307629DE8AF200C76787 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				5CFF307D29DE8AF300C76787 /* Assets.xcassets */,
 				5CFF307F29DE8AF300C76787 /* LaunchScreen.storyboard */,
 				5CFF308229DE8AF300C76787 /* Info.plist */,
+				5C98DC9229DE8D26000936E5 /* Vehiculo.swift */,
+				5C98DC9429DE8D78000936E5 /* Autobus.swift */,
+				5C98DC9629DE8D93000936E5 /* Limosina.swift */,
 			);
 			path = "Examen Unidad 1";
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C98DC9529DE8D78000936E5 /* Autobus.swift in Sources */,
+				5C98DC9329DE8D26000936E5 /* Vehiculo.swift in Sources */,
 				5CFF307929DE8AF200C76787 /* ViewController.swift in Sources */,
 				5CFF307529DE8AF200C76787 /* AppDelegate.swift in Sources */,
 				5CFF307729DE8AF200C76787 /* SceneDelegate.swift in Sources */,
+				5C98DC9729DE8D93000936E5 /* Limosina.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
