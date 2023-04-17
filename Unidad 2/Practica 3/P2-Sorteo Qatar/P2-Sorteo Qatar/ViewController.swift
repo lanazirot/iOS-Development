@@ -105,15 +105,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var mensaje = ""
         let bomboSeleccionado = (sender as AnyObject).selectedSegmentIndex ?? 0
         
-        if(bomboSeleccionado == 0) {
-            return
-        }
             
         for pais in bombos[bomboSeleccionado].paises {
             mensaje += "- \(pais.nombre)\n"
         }
        
-        sgmBombos.selectedSegmentIndex = 0
         if mensaje != "" {
             generarAlerta(titulo: "Paises miembros del \(bombos[bomboSeleccionado].nombre)", mensaje: mensaje)
         }
