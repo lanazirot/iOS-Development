@@ -141,12 +141,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xll-qU-Z2b">
+                                <rect key="frame" x="80" y="638" width="252" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="lblEtiquetaMain" destination="eYU-kk-xJg" id="bbn-ZI-735"/>
+                        <outlet property="lblInfoResultados" destination="Xll-qU-Z2b" id="IQw-BS-k1W"/>
                         <outlet property="lblKmFinal" destination="4FZ-ZI-irD" id="NEQ-qi-SYt"/>
                         <outlet property="lblKmFinalValor" destination="fBu-8T-4ks" id="aDw-1R-oIa"/>
                         <outlet property="lblTipoValorMain" destination="nRe-jP-YNu" id="SPH-Ro-FJq"/>

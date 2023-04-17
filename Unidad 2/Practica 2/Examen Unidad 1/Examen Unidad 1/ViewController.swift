@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     //General
     @IBOutlet weak var txtPlacas: UITextField!
     @IBOutlet weak var txtTarifa: UITextField!
+    @IBOutlet weak var lblInfoResultados: UILabel!
     
     //Para el autobus
     @IBOutlet weak var txtKmFinal: UITextField!
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblInfoResultados.text = ""
     }
 
     
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         txtImporteTotal.text = "0.00"
         txtValorCompartido.text = ""
         txtKmFinal.text = ""
+        lblInfoResultados.text = ""
         let tipoVehiculo = sender.titleForSegment(at: sender.selectedSegmentIndex)
         if(tipoVehiculo == "Limosina"){
             lblEtiquetaMain.text = "Dias totales"
@@ -86,6 +89,7 @@ class ViewController: UIViewController {
              //Coloca el importe total redondeado a 2 decimnales
             txtImporteTotal.text = String(format: "%.2f", autobus.calcularImporte())
 
+            lblInfoResultados.text = "Autobus con placas \(autobus.Placas) de importe $\(autobus.Tarifa) recorrido \(autobus.KmFinal - autobus.KmInicial) kms."
             
             break
             
@@ -100,7 +104,7 @@ class ViewController: UIViewController {
             //Coloca el importe total redondeado a 2 decimnales
             txtImporteTotal.text = String(format: "%.2f", limosina.calcularImporte())
             
-
+            lblInfoResultados.text = "Limosina con placas \(limosina.Placas) de importe $\(limosina.Tarifa) se quedo \(limosina.DiasTotales) dias."
             
             break
         }
