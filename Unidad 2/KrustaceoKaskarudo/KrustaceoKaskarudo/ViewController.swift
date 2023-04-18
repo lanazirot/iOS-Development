@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  KrustaceoKaskarudo
 //
-//  Created by Alan Peña on 18/04/23.
+//  Created by Admin on 18/04/23.
 //
 
 import UIKit
