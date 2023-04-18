@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		841223DC29EEED19002A1FB1 /* Alimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841223DB29EEED19002A1FB1 /* Alimento.swift */; };
 		841223DE29EEED2F002A1FB1 /* Orden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841223DD29EEED2F002A1FB1 /* Orden.swift */; };
-		841223E029EEED3D002A1FB1 /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841223DF29EEED3D002A1FB1 /* Pedido.swift */; };
+		843ADEE229EF0BE0006CD594 /* Mesa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ADEE129EF0BE0006CD594 /* Mesa.swift */; };
 		84FBCB4429EEEC4000748A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBCB4329EEEC4000748A0C /* AppDelegate.swift */; };
 		84FBCB4629EEEC4000748A0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBCB4529EEEC4000748A0C /* SceneDelegate.swift */; };
 		84FBCB4829EEEC4000748A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBCB4729EEEC4000748A0C /* ViewController.swift */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		841223DB29EEED19002A1FB1 /* Alimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alimento.swift; sourceTree = "<group>"; };
 		841223DD29EEED2F002A1FB1 /* Orden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orden.swift; sourceTree = "<group>"; };
-		841223DF29EEED3D002A1FB1 /* Pedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
+		843ADEE129EF0BE0006CD594 /* Mesa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesa.swift; sourceTree = "<group>"; };
 		84FBCB4029EEEC4000748A0C /* KrustaceoKaskarudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrustaceoKaskarudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FBCB4329EEEC4000748A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FBCB4529EEEC4000748A0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			children = (
 				841223DB29EEED19002A1FB1 /* Alimento.swift */,
 				841223DD29EEED2F002A1FB1 /* Orden.swift */,
-				841223DF29EEED3D002A1FB1 /* Pedido.swift */,
+				843ADEE129EF0BE0006CD594 /* Mesa.swift */,
 			);
 			path = Clases;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841223E029EEED3D002A1FB1 /* Pedido.swift in Sources */,
+				843ADEE229EF0BE0006CD594 /* Mesa.swift in Sources */,
 				84FBCB4829EEEC4000748A0C /* ViewController.swift in Sources */,
 				84FBCB4429EEEC4000748A0C /* AppDelegate.swift in Sources */,
 				841223DC29EEED19002A1FB1 /* Alimento.swift in Sources */,

@@ -19,4 +19,8 @@ class Orden {
     public func obtenerSubTotal() -> Double {
         return alimento.precio * cantidad
     }
+
+    public func toString() -> String {
+        return "\(alimento.nombre): \(cantidad)"
+    }
 }
