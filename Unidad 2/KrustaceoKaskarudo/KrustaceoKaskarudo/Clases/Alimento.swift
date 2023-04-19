@@ -13,7 +13,7 @@ class Alimento {
     
     init(nombre:String, precio: Double) {
         self.nombre = nombre
-        self.precio = precios
+        self.precio = precio
     }
     
     public func toString() -> String {

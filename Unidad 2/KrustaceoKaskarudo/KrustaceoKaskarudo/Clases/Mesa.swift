@@ -11,6 +11,8 @@ class Mesa {
     var ordenes:[Orden] = []
     var tengoDescuento: Bool = false
     var propinaPorcentaje:Int = 0
+    var mesa: Int = -1
+    
     
     init(mesa: Int) {
         self.mesa = mesa

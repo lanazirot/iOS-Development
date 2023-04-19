@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CCAA05129EF9D4C0039C1A5 /* AlimentoMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAA05029EF9D4C0039C1A5 /* AlimentoMenu.swift */; };
 		841223DC29EEED19002A1FB1 /* Alimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841223DB29EEED19002A1FB1 /* Alimento.swift */; };
 		841223DE29EEED2F002A1FB1 /* Orden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841223DD29EEED2F002A1FB1 /* Orden.swift */; };
 		843ADEE229EF0BE0006CD594 /* Mesa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ADEE129EF0BE0006CD594 /* Mesa.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CCAA05029EF9D4C0039C1A5 /* AlimentoMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlimentoMenu.swift; sourceTree = "<group>"; };
 		841223DB29EEED19002A1FB1 /* Alimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alimento.swift; sourceTree = "<group>"; };
 		841223DD29EEED2F002A1FB1 /* Orden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orden.swift; sourceTree = "<group>"; };
 		843ADEE129EF0BE0006CD594 /* Mesa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesa.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CCAA04F29EF9D330039C1A5 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5CCAA05029EF9D4C0039C1A5 /* AlimentoMenu.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		841223DA29EEECBB002A1FB1 /* Clases */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 		84FBCB4229EEEC4000748A0C /* KrustaceoKaskarudo */ = {
 			isa = PBXGroup;
 			children = (
+				5CCAA04F29EF9D330039C1A5 /* Global */,
 				841223DA29EEECBB002A1FB1 /* Clases */,
 				84FBCB4329EEEC4000748A0C /* AppDelegate.swift */,
 				84FBCB4529EEEC4000748A0C /* SceneDelegate.swift */,
@@ -159,6 +170,7 @@
 				84FBCB4829EEEC4000748A0C /* ViewController.swift in Sources */,
 				84FBCB4429EEEC4000748A0C /* AppDelegate.swift in Sources */,
 				841223DC29EEED19002A1FB1 /* Alimento.swift in Sources */,
+				5CCAA05129EF9D4C0039C1A5 /* AlimentoMenu.swift in Sources */,
 				841223DE29EEED2F002A1FB1 /* Orden.swift in Sources */,
 				84FBCB4629EEEC4000748A0C /* SceneDelegate.swift in Sources */,
 			);

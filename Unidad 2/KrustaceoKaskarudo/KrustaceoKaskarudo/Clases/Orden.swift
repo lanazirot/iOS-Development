@@ -8,16 +8,16 @@
 import Foundation
 
 class Orden {
-    var alimento: Alimento
+    var alimento: AlimentoMenu
     var cantidad: Int
 
-    init(alimento:Alimento, cantidad:Int) {
+    init(alimento:AlimentoMenu, cantidad:Int) {
         self.alimento = alimento
         self.cantidad = cantidad
     }
 
     public func obtenerSubTotal() -> Double {
-        return alimento.precio * cantidad
+        return alimento.rawValue * Double(cantidad)
     }
 
     public func toString() -> String {
