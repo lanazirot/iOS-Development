@@ -12,6 +12,8 @@ class Mesa {
     var tengoDescuento: Bool = false
     var propinaPorcentaje:Int = 0
     var mesa: Int = -1
+    var ticket: String = ""
+    
     
     
     init(mesa: Int) {
@@ -27,6 +29,11 @@ class Mesa {
     }
 
     public func cobrarMesa() -> String {
+        
+        if ordenes.isEmpty {
+            return ""
+        }
+        
         var mensaje:String = "Elementos consumidos: \n"
         var total:Double = 0
 
@@ -51,7 +58,7 @@ class Mesa {
 
         //Agregamos el total
         mensaje += "Total a pagar: $\(total)"
-        
+        self.ticket = mensaje
         return mensaje
     }
 }
