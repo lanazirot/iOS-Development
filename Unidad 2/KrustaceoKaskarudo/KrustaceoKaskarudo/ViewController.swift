@@ -64,9 +64,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pkvMenu.selectRow(0, inComponent: 0, animated: true)
         imgMenu.image = UIImage(named: menu[0].NombreImagen)
         switchDescuento.setOn(currentMesa.TengoDescuento, animated: true)
-        let currentCantidad = currentMesa.Ordenes.first { o in
-            o.Alimento.Nombre == menu[0].Nombre
-        }?.Cantidad ?? 0
+        let currentCantidad = currentMesa.obtenerCantidadAlimento(alimento: menu[0])
         stpCantidadAlimento.value = Double(currentCantidad)
         lblCurrentAlimentoCantidad.text = "\(currentCantidad)"
         lblMontoMesa.text = ""
