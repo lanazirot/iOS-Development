@@ -7,16 +7,53 @@
 
 import Foundation
 
-class Alimento {
-    var nombre:String
-    var precio:Double
+class Alimento : Equatable {
     
-    init(nombre:String, precio: Double) {
+    static func == (lhs: Alimento, rhs: Alimento) -> Bool {
+        return lhs.Nombre == rhs.Nombre
+    }
+    
+    private var nombre:String
+    private var precio:Double
+    private var nombreImagen:String
+
+    public var Nombre:String {
+        get {
+            return nombre
+        }
+        set {
+            nombre = newValue
+        }
+    }
+
+    public var Precio:Double {
+        get {
+            return precio
+        }
+        set {
+            precio = newValue
+        }
+    }
+    
+    public var NombreImagen:String{
+        get{
+            return nombreImagen
+        }
+        set{
+            nombreImagen = newValue
+        }
+    }
+
+    
+    
+    init(nombre:String, precio: Double, imagen: String) {
         self.nombre = nombre
         self.precio = precio
+        self.nombreImagen = imagen
     }
     
     public func toString() -> String {
-        return "\(nombre) \t\t$\(precio)"
+        return "\(nombre) $\(precio)"
     }
 }
+

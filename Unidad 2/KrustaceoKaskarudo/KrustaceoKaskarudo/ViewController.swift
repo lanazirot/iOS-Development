@@ -10,22 +10,18 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //Globales
-    let menu: [AlimentoMenu] = [.hamburguesaSencilla, .hamburguesaConQueso, .papasFritas, .refresco, .postre]
-    
+    var menu: [Alimento] = []
+        
     //Mesas
     let mesas: [Mesa] = [Mesa(mesa: 0), Mesa(mesa: 1), Mesa(mesa: 2)]
     var currentMesa: Mesa!
     
     
     //Funciones pickerview
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
 
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return menu.count
-    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return menu.count }
     
 
     //Labels
@@ -49,10 +45,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //App
     override func viewDidLoad() {
         super.viewDidLoad()
+        agregarElementosMenu()
         pkvMenu.delegate = self
         pkvMenu.dataSource = self
         lblMontoMesa.text = ""
         refreshSelection(mesa: 0)
+    }
+    
+    func agregarElementosMenu(){
+        let nuevoMenu = Menu()
+        menu.append(contentsOf: nuevoMenu.Alimentos)
     }
     
     func refreshSelection(mesa: Int){
@@ -60,11 +62,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let mesaValorArreglo = mesa
         currentMesa = mesas[mesaValorArreglo]
         pkvMenu.selectRow(0, inComponent: 0, animated: true)
-        imgMenu.image = UIImage(named: menu[0].imagen)
-        switchDescuento.setOn(currentMesa.tengoDescuento, animated: true)
-        let currentCantidad = currentMesa.ordenes.first { o in
-            o.alimento == menu[0]
-        }?.cantidad ?? 0
+        imgMenu.image = UIImage(named: menu[0].NombreImagen)
+        switchDescuento.setOn(currentMesa.TengoDescuento, animated: true)
+        let currentCantidad = currentMesa.Ordenes.first { o in
+            o.Alimento.Nombre == menu[0].Nombre
+        }?.Cantidad ?? 0
         stpCantidadAlimento.value = Double(currentCantidad)
         lblCurrentAlimentoCantidad.text = "\(currentCantidad)"
         lblMontoMesa.text = ""
@@ -78,15 +80,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     /**Titulo del pickerview de los alimentos**/
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return menu[row].nombre
+        return menu[row].toString()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let currentAlimento = menu[row]
-        imgMenu.image = UIImage(named: currentAlimento.imagen)
-        let currentCantidad = currentMesa.ordenes.first { o in
-            o.alimento == currentAlimento
-        }?.cantidad ?? 0
+        imgMenu.image = UIImage(named: currentAlimento.NombreImagen)
+        let currentCantidad = currentMesa.obtenerCantidadAlimento(alimento: currentAlimento)
         stpCantidadAlimento.value = Double(currentCantidad)
         lblCurrentAlimentoCantidad.text = "\(currentCantidad)"
     }
@@ -101,14 +101,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             title: "3%", style: .default,
             handler: {
                 action in
-                self.currentMesa.propinaPorcentaje = 3
+                self.currentMesa.PropinaPorcentaje = 3
             }
         ))
         alerta.addAction(UIAlertAction(
             title: "10%", style: .default,
             handler: {
                 action in
-                self.currentMesa.propinaPorcentaje = 10
+                self.currentMesa.PropinaPorcentaje = 10
             }
 
         ))
@@ -116,14 +116,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             title: "15%", style: .default,
             handler: {
                 action in
-                self.currentMesa.propinaPorcentaje = 15
+                self.currentMesa.PropinaPorcentaje = 15
             }
 
         ))
         alerta.addAction(UIAlertAction(
             title: "Cancelar (no dejar propina)", style: .cancel,
             handler: { action in
-                self.currentMesa.propinaPorcentaje = 0
+                self.currentMesa.PropinaPorcentaje = 0
             }
         ))
         present(alerta, animated: true)
@@ -139,31 +139,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let value = Int(sender.value)
         let currentAlimento = menu[pkvMenu.selectedRow(inComponent: 0)]
         if(value == 0){
-            currentMesa.ordenes.removeAll { orden in
-                orden.alimento == currentAlimento
-            }
+            currentMesa.eliminarOrdenPorAlimento(alimento: currentAlimento)
             lblCurrentAlimentoCantidad.text = "0"
         }else{
             let orden = Orden(alimento: menu[pkvMenu.selectedRow(inComponent: 0)], cantidad: value)
-            
-            let find = currentMesa.ordenes.contains(where: { o in
-                o.alimento == orden.alimento
-            })
-            
+            let find = currentMesa.ordenExistente(orden: orden)
             if(find){
-                currentMesa.ordenes.first { o in
-                    o.alimento == orden.alimento
-                }?.cantidad = value
+                currentMesa.modificarCantidadAlimento(orden: orden, nuevaCantidad: value)
             }else{
-                currentMesa.ordenes.append(orden)
+                currentMesa.agregarOrden(orden: orden)
             }
-            lblCurrentAlimentoCantidad.text = "\(orden.cantidad)"
+            lblCurrentAlimentoCantidad.text = "\(orden.Cantidad)"
         }
     }
     
     
     @IBAction func onSwitchDescuentoValueChanged(_ sender: UISwitch) {
-        currentMesa.tengoDescuento = sender.isOn
+        currentMesa.TengoDescuento = sender.isOn
     }
 }
 

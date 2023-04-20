@@ -7,20 +7,45 @@
 
 import Foundation
 
-class Orden {
-    var alimento: AlimentoMenu
-    var cantidad: Int
+class Orden : Equatable {
+    
+    static func == (lhs: Orden, rhs: Orden) -> Bool {
+        return lhs.Alimento.Nombre == rhs.Alimento.Nombre
+    }
+    
+    private var alimento: Alimento
+    private var cantidad: Int
 
-    init(alimento:AlimentoMenu, cantidad:Int) {
+    public var Alimento: Alimento {
+        get {
+            return alimento
+        }
+        set {
+            alimento = newValue
+        }
+    }
+
+    public var Cantidad: Int {
+        get {
+            return cantidad
+        }
+        set {
+            cantidad = newValue
+        }
+    }
+
+
+    init(alimento:Alimento, cantidad:Int) {
         self.alimento = alimento
         self.cantidad = cantidad
     }
 
     public func obtenerSubTotal() -> Double {
-        return alimento.rawValue * Double(cantidad)
+        return alimento.Precio * Double(cantidad)
     }
 
     public func toString() -> String {
-        return "\(alimento.nombre): \(cantidad)"
+        return "\(alimento.Nombre): \(cantidad)"
     }
 }
+
